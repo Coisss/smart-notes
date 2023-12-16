@@ -17,13 +17,15 @@ class Design():
 
         self.layout_main = QHBoxLayout()
 
+        self.window.setWindowTitle('Заметки')
+
         # список заметок
-        self.list_notes_label = QLabel('Список заміток')
+        self.list_notes_label = QLabel('Список заметок')
         self.left_textEdit = QTextEdit()
         self.list_notes = QListWidget()
-        self.list_add_btn = QPushButton('Створити замітку')
-        self.list_rem_btn = QPushButton('Видалити замітку')
-        self.list_sav_btn = QPushButton('Зберегти замітку')
+        self.list_add_btn = QPushButton('Создать заметку')
+        self.list_rem_btn = QPushButton('Удалить замтеку')
+        self.list_sav_btn = QPushButton('Сохранить заметку')
 
         # список тегов
         self.label_tags = QLabel('Список тегов')
