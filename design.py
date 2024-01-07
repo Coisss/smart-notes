@@ -86,6 +86,59 @@ class Design():
 
         self.list_notes.addItems(self.notes)
 
+        # Стиль для списков и элементов списка
+        list_style = """
+            QListWidget, QLineEdit, QTextEdit {
+                background-color: #ffffff;
+                border: 2px solid #4CAF50;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            QListWidget:item {
+                background-color: #f0f0f0;
+                padding: 5px;
+                border-radius: 3px;
+                margin-bottom: 5px;
+            }
+            QListWidget:item:selected {
+                background-color: #4CAF50;
+                color: white;
+            }
+        """
+        
+        # Стиль для кнопок
+        button_style = """
+            QPushButton {
+                background-color: #4CAF50;
+                color: white;
+                border: 2px solid #4CAF50;
+                border-radius: 5px;
+                padding: 5px;
+            }
+        """
+
+        # Стиль для фона
+        background_style = """
+            QWidget { 
+                background-color: #f0f0f0;
+            }
+        """
+
+        # Применение стилей
+        self.list_notes.setStyleSheet(list_style)
+        self.list_tags.setStyleSheet(list_style)
+        self.search_tags.setStyleSheet(list_style)
+        self.left_textEdit.setStyleSheet(list_style)
+
+        self.list_add_btn.setStyleSheet(button_style)
+        self.list_rem_btn.setStyleSheet(button_style)
+        self.list_sav_btn.setStyleSheet(button_style)
+        self.tags_add_btn.setStyleSheet(button_style)
+        self.tags_rem_btn.setStyleSheet(button_style)
+        self.tags_sav_btn.setStyleSheet(button_style)
+
+        self.window.setStyleSheet(background_style)
+
     def init(self):
         self.list_notes.itemClicked.connect(self.show_note)
         self.tags_add_btn.clicked.connect(self.add_tag)
@@ -99,4 +152,4 @@ class Design():
         self.left_textEdit.textChanged.connect(self.save_notes)
 
         self.window.show()
-        self.app.exec_()
+        self.app.exec_()    
